@@ -27,7 +27,16 @@ $sql = "CREATE TABLE IF NOT EXISTS eventi (
     PRIMARY KEY (id)
 )";
 
+$sql = " INSERT INTO eventi (`attendees`, `nome_evento`, `data_evento`) VALUES 
+('ulysses200915@varen8.com,qmonkey14@falixiao.com,mavbafpcmq@hitbase.net','Test Edusogno 1', '2022-10-13 14:00'), 
+('dgipolga@edume.me,qmonkey14@falixiao.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00'), 
+('dgipolga@edume.me,ulysses200915@varen8.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00')";
 
+if($connessione->query($sql) === true){
+    echo "Tabbella creata con successo!";
+}else{
+    echo "Errore durante creazione tabella" . $connessione->error;
+}
 
 $connessione->close();
 
