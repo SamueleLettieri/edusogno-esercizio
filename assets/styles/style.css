@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generals */
+.ms_p30{
+    padding: 30px;
+}
+
+.ms_mt{
+    margin-top: 110px;
+}
+
+.ms_image{
+    width: 150px;
+}
+
+/* Header */
+
+header{
+    background-color: white; 
+    border-bottom: 1px solid #646368;
+    border-radius: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Main */
+
+main{
+    background-image: url('../img/sfondo\ esercizio.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
