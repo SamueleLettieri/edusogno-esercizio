@@ -55,6 +55,15 @@
     padding-top: 10px;
 }
 
+.ms_title{
+    color: var(--primary-color);
+}
+
+
+.ms_c_b{
+    color: black;
+}
+
 /* Header */
 
 header{
@@ -81,9 +90,6 @@ main{
     width: 500px;
     margin: auto;
 }
-.ms_title{
-    color: var(--primary-color);
-}
 
 .ms_box{
     border: 1px solid  var(--primary-color);
@@ -97,12 +103,23 @@ input{
     border-bottom: 2px solid  var(--primary-color);
 }
 
-button{
+.ms_link{
     border-radius: 10px;
     background-color:  var(--primary-color);
     border: 1px solid  var(--primary-color);
 }
 
-a{
-    color: black;
+/* Main event */
+
+.ms_container_pg{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+.ms_card{
+    text-align: start;
+    display: inline-block;
+    width: 27%;
+    margin: 0 15px;
 }
