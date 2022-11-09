@@ -23,17 +23,17 @@
                     <div class="ms_box ms_card ms_p30 ms_background-white ms_mt10">
                         <h1>Nome evento</h1>
                         <div>15-10-2022 15:00</div>
-                        <a href="" class="ms_tc ms_link ms_mt10 ms_d_blok  ms_p_tb">ACCEDI</a>
+                        <a href="" class="ms_t-decoration ms_tc ms_link ms_mt10 ms_d_blok  ms_p_tb">ACCEDI</a>
                     </div>
                     <div class="ms_box ms_card ms_p30 ms_background-white ms_mt10">
                         <h1>Nome evento</h1>
                         <div>15-10-2022 15:00</div>
-                        <a href="" class="ms_tc ms_link ms_mt10 ms_d_blok  ms_p_tb">ACCEDI</a>
+                        <a href="" class="ms_t-decoration ms_tc ms_link ms_mt10 ms_d_blok  ms_p_tb">ACCEDI</a>
                     </div>
                     <div class="ms_box ms_card ms_p30 ms_background-white ms_mt10">
                         <h1>Nome evento</h1>
                         <div>15-10-2022 15:00</div>
-                        <a href="" class="ms_tc ms_link ms_mt10 ms_d_blok ms_p_tb">ACCEDI</a>
+                        <a href="" class="ms_t-decoration ms_tc ms_link ms_mt10 ms_d_blok ms_p_tb">ACCEDI</a>
                     </div>
                 </div>
             </div>
