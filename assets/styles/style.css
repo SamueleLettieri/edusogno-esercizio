@@ -123,3 +123,7 @@ input{
     width: 27%;
     margin: 0 15px;
 }
+
+.ms_t-decoration{
+    text-decoration: none;
+}
