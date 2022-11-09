@@ -16,24 +16,24 @@
 
     <main class="ms_mt110">
         <div class="ms_container ms_pt100">
-            <div class="ms_tc">
-                <h1>Hai già un account?</h1>
+            <div class="">
+                <h1 class="ms_title ms_tc">Hai già un account?</h1>
 
-                <div class="ms_box ms_p30 ms_background-white">
+                <div class="ms_box ms_p30 ms_background-white ms_mt40">
                     <form action="">
-                        <div class="ms_m40">
-                            <label for="">Inserisci l'e-mail</label>
-                            <input type="email" placeholder="name@example.com">
+                        <div class="ms_mt40">
+                            <label for="" class="ms_d_blok ms_w_100">Inserisci l'e-mail</label>
+                            <input type="email" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="name@example.com" maxlength="255" required autocomplete="email">
                             <small></small>
                         </div>
-                        <div class="ms_m40">
-                            <label for="">Inserisci la password</label>
-                            <input type="password" placeholder="Scrivi qui">
+                        <div class="ms_mt40">
+                            <label for="" class="ms_d_blok ms_w_100">Inserisci la password</label>
+                            <input type="password" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Scrivi qui" minlength="8" maxlenght="255" required autocomplete="new-password">
                             <small></small>
                         </div>
-                        <button class="ms_m20">ACCEDI</button>
+                        <button class="ms_mt40 ms_d_blok ms_w_100 ms_p_tb">ACCEDI</button>
                     </form>
-                    <small class="">Non hai ancora un profilo? <a href="#"><strong>Registrati</strong></a></small>
+                    <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="#"><strong>Registrati</strong></a></small>
                 </div>
             </div>
         </div>

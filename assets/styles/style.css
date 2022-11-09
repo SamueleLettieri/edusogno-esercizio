@@ -1,3 +1,8 @@
+/* variables */
+:root{
+    --primary-color: #caa395;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,6 +10,14 @@
 }
 
 /* Generals */
+.ms_d_blok{
+    display: block;
+}
+
+.ms_w_100{
+    width: 100%;
+}
+
 .ms_background-white{
     background-color: white; 
 }
@@ -29,13 +42,19 @@
     text-align: center;
 }
 
-.ms_m40{
-    margin: 40px;
+.ms_mt40{
+    margin-top: 40px;
 }
 
-.ms_m20{
-    margin: 10px;
+.ms_mt10{
+    margin-top: 10px;
 }
+
+.ms_p_tb{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 /* Header */
 
 header{
@@ -62,14 +81,28 @@ main{
     width: 500px;
     margin: auto;
 }
-
-h1{
-    color: #caa395;
+.ms_title{
+    color: var(--primary-color);
 }
 
 .ms_box{
-    border: 1px solid #caa395;
+    border: 1px solid  var(--primary-color);
     border-radius: 20px;
 }
 
 /* Form */
+
+input{
+    border: none;
+    border-bottom: 2px solid  var(--primary-color);
+}
+
+button{
+    border-radius: 10px;
+    background-color:  var(--primary-color);
+    border: 1px solid  var(--primary-color);
+}
+
+a{
+    color: black;
+}
