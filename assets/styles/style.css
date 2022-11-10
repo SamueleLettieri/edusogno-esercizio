@@ -59,6 +59,9 @@
     color: var(--primary-color);
 }
 
+.ms_t-decoration{
+    text-decoration: none;
+}
 
 .ms_c_b{
     color: black;
@@ -79,7 +82,7 @@ header{
 /* Main */
 
 main{
-    background-image: url('../img/sfondo\ esercizio.jpg');
+    background-image: url('../img/sfondoEsercizio.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,6 +110,7 @@ input{
     border-radius: 10px;
     background-color:  var(--primary-color);
     border: 1px solid  var(--primary-color);
+    color: white;
 }
 
 /* Main event */
@@ -122,8 +126,4 @@ input{
     display: inline-block;
     width: 27%;
     margin: 0 15px;
-}
-
-.ms_t-decoration{
-    text-decoration: none;
 }
