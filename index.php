@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/mystyle.css">
     <title>Edusogno</title>
 </head>
 
@@ -16,7 +16,7 @@
 
     <main class="ms_mt110">
         <div class="ms_container ms_pt100">
-            <div class="">
+            <div>
                 <h1 class="ms_title ms_tc">Hai già un account?</h1>
 
                 <div class="ms_box ms_p30 ms_background-white ms_mt40">
@@ -31,9 +31,9 @@
                             <input type="password" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Scrivi qui" minlength="8" maxlenght="255" required autocomplete="new-password">
                             <small></small>
                         </div>
-                        <button class="ms_mt40 ms_d_blok ms_w_100 ms_p_tb">ACCEDI</button>
+                        <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb">ACCEDI</button>
                     </form>
-                    <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="#"><strong>Registrati</strong></a></small>
+                    <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="#" class="ms_c_b"><strong>Registrati</strong></a></small>
                 </div>
             </div>
         </div>
