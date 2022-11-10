@@ -38,6 +38,10 @@
     width: 150px;
 }
 
+.ms_te{
+    text-align: end;
+}
+
 .ms_tc{
     text-align: center;
 }
@@ -65,6 +69,10 @@
 
 .ms_c_b{
     color: black;
+}
+
+.ms_d_inline_block{
+    display: inline-block;
 }
 
 /* Header */
