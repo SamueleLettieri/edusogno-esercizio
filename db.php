@@ -5,12 +5,14 @@ $username="root";
 $password = $passwordDB ;
 $database="ls_login";
 
+/* connessione al DB */
 $connessione = new mysqli($host, $username, $password, $database);
 
 if($connessione === false){
     die("Errore di connesiione:" . $connessione->error);
 }
 
+/* Inserimento di tabbelle e dati nel DB */
 
 /* $sql = "CREATE TABLE IF NOT EXISTS utenti (
     id int NOT NULL AUTO_INCREMENT,
@@ -38,13 +40,14 @@ $sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES
 (?, ?, ?, ?)";
 
 
+
 if($statement = $connessione->prepare($sql)){
     $statement->bind_param("ssss", $nome, $cognome, $email, $password);
 
-    $nome =$_REQUEST['nome'];
+    $nome = $_REQUEST['nome'];
     $cognome = $_REQUEST['cognome'];
     $email = $_REQUEST['email'];
-    $password = md5($_REQUEST['password']);
+    $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
     $statement->execute();
 
     header("location: /edusogno-esercizio/index.php");
@@ -54,6 +57,7 @@ if($statement = $connessione->prepare($sql)){
 }
 
 $statement->close();  
+
 
 $connessione->close();
 
