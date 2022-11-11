@@ -1,3 +1,8 @@
+<?php 
+session_start();
+@var_dump($_SESSION);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +15,9 @@
 </head>
 
 <body>
-    <header class="ms_p30 ms_background-white">
+<!--     <header class="ms_p30 ms_background-white">
         <div class=""><img class="ms_image" src="./assets/img/logo-black.svg" alt=""></div>
-    </header>
+    </header> -->
 
     <main class="ms_mt110">
         <div class="ms_container ms_pt100">
@@ -24,12 +29,12 @@
                     <div class="ms_mt40">
                             <label for="nome" class="ms_d_blok ms_w_100">Inserisci il nome</label>
                             <input type="text" name="nome" id="nome" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Mario" required maxlength="45">
-                            <small></small>
+                            <small><?php echo $_SESSION["nome"] ?></small>
                         </div>
                         <div class="ms_mt40">
                             <label for="cognome" class="ms_d_blok ms_w_100">Inserisci il cognome</label>
                             <input type="text" name="cognome" id="cognome" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Rossi" required maxlength="45">
-                            <small></small>
+                            <small><?php echo $_SESSION["cognome"] ?></small>
                         </div>
                         <div class="ms_mt40">
                             <label for="email" class="ms_d_blok ms_w_100">Inserisci l'e-mail</label>
@@ -41,7 +46,7 @@
                             <input type="password" name="password" id="password" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Scrivi qui" maxlenght="255" required autocomplete="new-password">
                             <small></small>
                         </div>
-                        <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb">REGISTRATI</button>
+                        <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb" name="button">REGISTRATI</button>
                     </form>
                     <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="index.php" class="ms_c_b"><strong>Accedi</strong></a></small>
                 </div>

@@ -36,28 +36,57 @@ if($connessione === false){
 ('dgipolga@edume.me,qmonkey14@falixiao.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00'), 
 ('dgipolga@edume.me,ulysses200915@varen8.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00')";  */ 
 
-$sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES 
-(?, ?, ?, ?)";
+
+if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 
+    $nome = htmlentities($_POST['nome'], ENT_HTML5);
+    $cognome =  htmlentities($_POST['cognome'], ENT_HTML5);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $button =$_POST['button'];
 
-if($statement = $connessione->prepare($sql)){
-    $statement->bind_param("ssss", $nome, $cognome, $email, $password);
+    $nomeCount = strlen($nome);
+    $cognomeCount = strlen($cognome);
+    if(isset($button)){
+        if($nomeCount < 5 ){
+            $nomeCeck = $nome;
+        }else{
+            $erroreNome = "il nome non puo contenere piu si 45 caratteri";
 
-    $nome = $_REQUEST['nome'];
-    $cognome = $_REQUEST['cognome'];
-    $email = $_REQUEST['email'];
-    $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
-    $statement->execute();
+            $_SESSION["erroreNome"] = $erroreNome;
+        };
 
-    header("location: /edusogno-esercizio/index.php");
+        if($cognomeCount > 45 ){
+            $cognomeCeck = $cognome;
+        }else{
+            $erroreCognome = "il cognome non puo contenere piu si 45 caratteri";
 
-}else{
-    echo "Errore: non è possibile inserire la query: $sql," . $connessione->error;
+            $_SESSION["erroreCognome"] = $erroreCognome;
+        };
+    }
+
+    
+        
+
+    $sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES 
+    (?, ?, ?, ?)";
+    if($statement = $connessione->prepare($sql)){
+        $statement->bind_param("ssss", $nomececk, $cognome, $email, $password);
+
+        $nomececk;
+        $cognomececk;
+
+        /* $statement->execute(); */
+
+        header("location: /edusogno-esercizio/register.php"); 
+
+    }else{
+        echo "Errore: non è possibile inserire la query: $sql," . $connessione->error;
+    }
 }
 
 $statement->close();  
-
 
 $connessione->close();
 
