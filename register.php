@@ -41,9 +41,9 @@
                             <input type="password" name="password" id="password" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Scrivi qui" maxlenght="255" required autocomplete="new-password">
                             <small></small>
                         </div>
-                        <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb">ACCEDI</button>
+                        <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb">REGISTRATI</button>
                     </form>
-                    <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="#" class="ms_c_b"><strong>Registrati</strong></a></small>
+                    <small class="ms_mt40 ms_tc ms_d_blok">Non hai ancora un profilo? <a href="index.php" class="ms_c_b"><strong>Accedi</strong></a></small>
                 </div>
             </div>
         </div>
