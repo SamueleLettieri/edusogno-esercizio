@@ -16,22 +16,6 @@ if($connessione === false){
 $email = $_REQUEST['email'];
 $password = $_REQUEST['password'];
 
-/* $sql = "SELECT * FROM  utenti";
-if($result = $connessione->query($sql)){
-    if($result->num_rows > 0){
-        while($row = $result->fetch_array()){
-            if($row['email'] === $email & $row['password'] === $password){
-            header("location: /edusogno-esercizio/personalPage.php");
-            }
-        }
-    }else{
-    echo "non ci sono dati";
-    }
-}else{
-    echo "errore impossibile eseguire la query $sql" . $connessione->error;
-} */
-
-
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     $sql = "SELECT * FROM  utenti WHERE email = '$email'";
 
