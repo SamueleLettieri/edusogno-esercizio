@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
                 $_SESSION['nome'] = $row['nome'];
                 header("location: /edusogno-esercizio/eventi.php");
             }else{
-                echo "la password non è corretta";
+                header("location: /edusogno-esercizio/index.php");
             }
         }else{
             echo "non ci sono account";

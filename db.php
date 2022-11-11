@@ -36,28 +36,30 @@ if($connessione === false){
 ('dgipolga@edume.me,qmonkey14@falixiao.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00'), 
 ('dgipolga@edume.me,ulysses200915@varen8.com,mavbafpcmq@hitbase.net','Test Edusogno 2', '2022-10-15 19:00')";  */ 
 
-$sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES 
-(?, ?, ?, ?)";
+
+if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 
+    $sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES 
+    (?, ?, ?, ?)";
+    if($statement = $connessione->prepare($sql)){
+        $statement->bind_param("ssss", $nome, $cognome, $email, $password);
 
-if($statement = $connessione->prepare($sql)){
-    $statement->bind_param("ssss", $nome, $cognome, $email, $password);
+        $nome = htmlentities($_POST['nome'], ENT_HTML5);
+        $cognome =  htmlentities($_POST['cognome'], ENT_HTML5);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $nome = $_REQUEST['nome'];
-    $cognome = $_REQUEST['cognome'];
-    $email = $_REQUEST['email'];
-    $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
-    $statement->execute();
+        $statement->execute();
 
-    header("location: /edusogno-esercizio/index.php");
+        header("location: /edusogno-esercizio/index.php"); 
 
-}else{
-    echo "Errore: non è possibile inserire la query: $sql," . $connessione->error;
+    }else{
+        echo "Errore: non è possibile inserire la query: $sql," . $connessione->error;
+    } 
 }
 
 $statement->close();  
-
 
 $connessione->close();
 
