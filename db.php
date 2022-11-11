@@ -40,50 +40,23 @@ if($connessione === false){
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 
-    $nome = htmlentities($_POST['nome'], ENT_HTML5);
-    $cognome =  htmlentities($_POST['cognome'], ENT_HTML5);
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $button =$_POST['button'];
-
-    $nomeCount = strlen($nome);
-    $cognomeCount = strlen($cognome);
-    if(isset($button)){
-        if($nomeCount < 5 ){
-            $nomeCeck = $nome;
-        }else{
-            $erroreNome = "il nome non puo contenere piu si 45 caratteri";
-
-            $_SESSION["erroreNome"] = $erroreNome;
-        };
-
-        if($cognomeCount > 45 ){
-            $cognomeCeck = $cognome;
-        }else{
-            $erroreCognome = "il cognome non puo contenere piu si 45 caratteri";
-
-            $_SESSION["erroreCognome"] = $erroreCognome;
-        };
-    }
-
-    
-        
-
     $sql = " INSERT INTO utenti (`nome`, `cognome`, `email`, `password`) VALUES 
     (?, ?, ?, ?)";
     if($statement = $connessione->prepare($sql)){
-        $statement->bind_param("ssss", $nomececk, $cognome, $email, $password);
+        $statement->bind_param("ssss", $nome, $cognome, $email, $password);
 
-        $nomececk;
-        $cognomececk;
+        $nome = htmlentities($_POST['nome'], ENT_HTML5);
+        $cognome =  htmlentities($_POST['cognome'], ENT_HTML5);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-        /* $statement->execute(); */
+        $statement->execute();
 
-        header("location: /edusogno-esercizio/register.php"); 
+        header("location: /edusogno-esercizio/index.php"); 
 
     }else{
         echo "Errore: non è possibile inserire la query: $sql," . $connessione->error;
-    }
+    } 
 }
 
 $statement->close();  

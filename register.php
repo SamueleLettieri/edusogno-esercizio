@@ -1,8 +1,3 @@
-<?php 
-session_start();
-@var_dump($_SESSION);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,13 +6,14 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/styles/mystyle.css">
+   
     <title>Edusogno</title>
 </head>
 
 <body>
-<!--     <header class="ms_p30 ms_background-white">
+    <header class="ms_p30 ms_background-white">
         <div class=""><img class="ms_image" src="./assets/img/logo-black.svg" alt=""></div>
-    </header> -->
+    </header>
 
     <main class="ms_mt110">
         <div class="ms_container ms_pt100">
@@ -25,26 +21,26 @@ session_start();
                 <h1 class="ms_title ms_tc">Crea il tuo account</h1>
 
                 <div class="ms_box ms_p30 ms_background-white ms_mt40">
-                    <form action="db.php" method="POST">
+                    <form action="db.php" method="POST" id="register-form">
                     <div class="ms_mt40">
                             <label for="nome" class="ms_d_blok ms_w_100">Inserisci il nome</label>
                             <input type="text" name="nome" id="nome" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Mario" required maxlength="45">
-                            <small><?php echo $_SESSION["nome"] ?></small>
+                            <small>Max: 45 caratteri</small>
                         </div>
                         <div class="ms_mt40">
                             <label for="cognome" class="ms_d_blok ms_w_100">Inserisci il cognome</label>
                             <input type="text" name="cognome" id="cognome" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Rossi" required maxlength="45">
-                            <small><?php echo $_SESSION["cognome"] ?></small>
+                            <small>Max: 45 caratteri</small>
                         </div>
                         <div class="ms_mt40">
                             <label for="email" class="ms_d_blok ms_w_100">Inserisci l'e-mail</label>
                             <input type="email" name="email" id="email" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="name@example.com" maxlength="255" required autocomplete="email">
-                            <small></small>
+                            <small>Max: 255 caratteri</small>
                         </div>
                         <div class="ms_mt40">
                             <label for="password" class="ms_d_blok ms_w_100">Inserisci la password</label>
                             <input type="password" name="password" id="password" class="ms_mt10 ms_w_100 ms_p_tb" placeholder="Scrivi qui" maxlenght="255" required autocomplete="new-password">
-                            <small></small>
+                            <small>Max: 255 caratteri</small>
                         </div>
                         <button class="ms_link ms_mt40 ms_d_blok ms_w_100 ms_p_tb" name="button">REGISTRATI</button>
                     </form>
@@ -53,6 +49,7 @@ session_start();
             </div>
         </div>
     </main>
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
