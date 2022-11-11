@@ -13,10 +13,10 @@ if($connessione === false){
 }
 
 /* Login */
-$email = $_REQUEST['email'];
-$password = $_REQUEST['password'];
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
+    $email = $_REQUEST['email'];
+    $password = $_REQUEST['password'];
     $sql = "SELECT * FROM  utenti WHERE email = '$email'";
 
     if($result = $connessione->query($sql)){
@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
                 $_SESSION['loggato'] = true;
                 $_SESSION['nome'] = $row['nome'];
-                header("location: /edusogno-esercizio/personalPage.php");
+                header("location: /edusogno-esercizio/eventi.php");
             }else{
                 echo "la password non è corretta";
             }
