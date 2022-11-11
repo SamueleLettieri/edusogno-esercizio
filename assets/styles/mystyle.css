@@ -75,6 +75,14 @@
     display: inline-block;
 }
 
+.ms_d_flex{
+    display: flex;
+}
+
+.ms_flex_end{
+    justify-content: flex-end;
+}
+
 /* Header */
 
 header{
@@ -132,7 +140,7 @@ input{
 .ms_card{
     text-align: start;
     display: inline-block;
-    width: 27%;
+    width: 29%;
     margin: 0 15px;
 }
 
